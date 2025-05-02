@@ -1,786 +1,2561 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Emmanuel Olawale</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-
-</head>
-
-<body>
-
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	        <li><a class="smoothscroll" href="#resume">Resume</a></li>
-			<li><a class="smoothscroll" href="#skills">Skills</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Certificates</a></li>
-            <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
-            <li><a href="projects">Blogs & Projects</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">I'm Emmanuel Olawale.</h1>
-            <h3>As a seasoned <span>Application Architect</span> with a strong emphasis on technical excellence and <span>customer-centric</span> solutions. With a comprehensive background in both technical and strategic environments
-			<a class="smoothscroll" href="#about">Start scrolling</a> and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
-            <hr />
-            <ul class="social">
-               <li><a href="https://twitter.com/exielabs"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/emmanuel-olawale-o/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.instagram.com/thecloudhelp"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="https://github.com/thesonicstar"><i class="fa fa-github"></i></a></li>
-            </ul>
-         </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Olawale - Solution Architect</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#818cf8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --text-primary: #1f2937;
+      --text-secondary: #4b5563;
+      --border-color: #e5e7eb;
+      --toggle-bg: #e5e7eb;
+      --toggle-checked-bg: #e0e7ff;
+      }
+      :root.dark {
+      --bg-primary: #1f2937;
+      --bg-secondary: #111827;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --border-color: #374151;
+      --toggle-bg: #4b5563;
+      --toggle-checked-bg: #4f46e5;
+      }
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      transition: background-color 0.3s, color 0.3s;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #4f46e5;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      #theme-toggle {
+      opacity: 0;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      }
+      .toggle-checkbox {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      }
+      .toggle-checkbox:checked {
+      right: 0;
+      background-color: #4f46e5;
+      transform: translateX(100%);
+      }
+      .toggle-label {
+      position: relative;
+      display: block;
+      width: 48px;
+      height: 24px;
+      background-color: var(--toggle-bg);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      }
+      .toggle-checkbox:checked + .toggle-label {
+      background-color: var(--toggle-checked-bg);
+      }
+      .github-calendar {
+      background-image: linear-gradient(to right, rgba(79, 70, 229, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(79, 70, 229, 0.1) 1px, transparent 1px);
+      background-size: 14px 14px;
+      }
+      .github-contribution {
+      width: 10px;
+      height: 10px;
+      margin: 2px;
+      border-radius: 2px;
+      }
+      .contribution-level-0 { background-color: var(--bg-secondary); }
+      .contribution-level-1 { background-color: #c6e48b; }
+      .contribution-level-2 { background-color: #7bc96f; }
+      .contribution-level-3 { background-color: #239a3b; }
+      .contribution-level-4 { background-color: #196127; }
+      .dark .bg-white { background-color: var(--bg-primary); }
+      .dark .bg-gray-50 { background-color: var(--bg-secondary); }
+      .dark .text-gray-900 { color: var(--text-primary); }
+      .dark .text-gray-700 { color: var(--text-secondary); }
+      .dark .text-gray-600 { color: var(--text-secondary); }
+      .dark .border-gray-100 { border-color: var(--border-color); }
+      .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-10 h-10 flex items-center justify-center text-primary text-xl"
+          >
+            <i class="ri-code-box-line"></i>
+          </div>
+          <a
+            href="#"
+            class="text-xl font-semibold hover:text-primary transition"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            >Emmanuel Olawale</a
+          >
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary transition"
+            >Experience</a
+          >
+          <a href="#skills" class="text-gray-700 hover:text-primary transition"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-primary transition"
+            >Projects</a
+          >
+          <a href="#blog" class="text-gray-700 hover:text-primary transition"
+            >Blog</a
+          >
+          <a
+            href="#education"
+            class="text-gray-700 hover:text-primary transition"
+            >Education</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center">
+            <div
+              class="relative inline-block w-10 mr-2 align-middle select-none"
+            >
+              <input
+                type="checkbox"
+                id="theme-toggle"
+                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer transition-transform duration-200 ease-in-out"
+              />
+              <label
+                for="theme-toggle"
+                class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+              ></label>
+            </div>
+            <span class="text-sm text-gray-700">Dark Mode</span>
+          </div>
+          <a
+            href="https://drive.google.com/file/d/1ka0gQOwvM_Pbb1r3S3ZImsi6sQ1B-nAB/view?usp=sharing"
+            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center gap-2"
+          >
+            <i class="ri-download-line"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
       </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>About Me</h2>
-
-            <p>My passion is technology. I am a technologist at heart. I have joined the serverless journey and loving it! I'm happy to share my experience and to learn from others on theirs, so feel free to drop me a message about any interesting projects or opportunities.
-
-			   Developer turned architect, I take pride in being at the forefront of creating, implementing, and managing IT solutions that seamlessly blend technical prowess with real-world practicality.
-			</p>
-			<p>
-			   Looking ahead, I am excited to continue leveraging my technical prowess, strategic insight, and customer-focused approach to drive impactful technological solutions that empower businesses to thrive in the digital age.
-			   I am passionate about championing innovation and am eager to contribute my skills and expertise. 
-
-            </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>Emmanuel Olawale</span><br>
-
-						   <span>e.olawale1@gmail.com</span><br>
-                     <!--<span>anyone@website.com</span>-->
-					   </p>
-
-               </div>
-
-               <div class="columns download">
-                  <p>
-                     <a href="https://drive.google.com/file/d/1ka0gQOwvM_Pbb1r3S3ZImsi6sQ1B-nAB/view?usp=sharing" target="_new" class="button"><i class="fa fa-download"></i>Download Resume</a>
-                  </p>
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
+    </header>
+    <!-- Hero Section -->
+    <section class="py-16 bg-white border-b border-gray-100">
+      <div
+        class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-center"
+      >
+        <div class="md:col-span-2">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Emmanuel Olawale
+          </h1>
+          <h2 class="text-2xl text-primary font-semibold mb-6">
+            Software Solution Architect
+          </h2>
+          <p class="text-gray-700 mb-8 leading-relaxed">
+            Experienced Solution Architect with over 12 years of expertise in
+            designing and implementing scalable, resilient enterprise solutions.
+            Specializing in cloud architecture, microservices, and digital
+            transformation initiatives. Passionate about leveraging emerging
+            technologies to solve complex human-centric challenges.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a
+              href="https://www.linkedin.com/in/emmanuel-olawale-o/"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i
+                  class="ri-linkedin-fill text-[#0077B5] dark:text-[#0077B5]"
+                ></i>
+              </div>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://twitter.com/exielabs"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-twitter-x-fill text-black dark:text-white"></i>
+              </div>
+              <span>Twitter</span>
+            </a>
+            <a
+              href="https://github.com/thesonicstar"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-github-fill text-black dark:text-white"></i>
+              </div>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="mailto:e.olawale1@gmail.com"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-mail-line text-gray-700 dark:text-gray-300"></i>
+              </div>
+              <span>e.olawale1@gmail.com</span>
+            </a>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="#contact"
+              class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition"
+            >
+              Contact Me
+            </a>
+            <a
+              href="#projects"
+              class="border border-gray-300 text-gray-700 px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition"
+            >
+              View Projects
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="w-64 h-64 mx-auto overflow-hidden rounded-full border-4 border-white shadow-lg"
+          >
+            <img
+              src="images/profilepic.jpg"
+              alt="Emmanuel Olawale"
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div
+            class="absolute -bottom-4 right-1/4 bg-white shadow-md rounded-full p-3"
+          >
+            <div
+              class="w-10 h-10 flex items-center justify-center text-primary"
+            >
+              <i class="ri-verified-badge-fill"></i>
+            </div>
+          </div>
+        </div>
       </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Oxford Brookes University</h3>
-                  <p class="info">BSc Hons Computer Science<span>&bull;</span> <em class="date">April 2012</em></p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Education -->
-
-
-      <!-- Work
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Work</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Fujitsu</h3>
-                  <p class="info">Application (Cloud) Architect <span>&bull;</span> <em class="date">July 2022 - Present</em></p>
-
-                  <p>
-                  Undertaking several roles: Infrastructure Architect, Release Architect, QA Engineer and Software Solution Architect.
-				  <h6>Role: Infrastructure Architect</h6>
-				  <ul>
-					<li>Gathering, analysing and formulating cost models for customer solutions.</li>
-					<li>Facilitate activities for solution design and implementation.</li>
-					<li>Solution development and technical consultancy across the infrastructure technology spectrum.</li>
-				  </ul>
-				  <h6>Role: Release Architect </h6>
-				  <ul>
-					<li>Responsible for being a Solution Owner, working across the programme for a large retail customer. </li>
-					<li>Apply quality assurance to each of the designs in the solution.</li>
-					<li>Managing and working with offshore resources</li>
-				  </ul>
-				  <h6>Role: Software Solutions Architect / Product Owner</h6>
-				  <ul>
-					<li>Responsible for delivering Age Verification solutions for Fujitsu to customers [Retail + Banking].</li>
-					<li>Building/Testing solutions within Azure and AWS</li>
-					<li>Delivering (native) mobile SDK, Android and IOS.</li>
-					<li>Performing demo for prospective customers</li>
-					<li>Evaluating AI algorithms and implementing models into an SDK</li>
-				  </ul>
-                  </p>
-				  <p>Undertaking different architect roles from Infrastructure and Release to solution owner. Providing solution development and technical consultancy.
-				  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Resolve Systems</h3>
-                  <p class="info">Senior Consultant/Technical Lead <span>&bull;</span> <em class="date">May 2018 - July 2022</em></p>
-
-                  <p>
-                  Acting as an expert on the Resolve solution through implementing, developing and deploying automation solutions on a global scale. 
-				  I work with partners and customers to ensure that end users maximise the benefits of using the Resolve Systems software over long term
-				  this ensures that customers achieve or exceed expected business case benefits. 
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-			
-			<div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Network Rail </h3>
-                  <p class="info">System & Application Support Specialist <span>&bull;</span> <em class="date">January 2015 - May 2018</em></p>
-
-                  <p>
-                  Working within the Asset Management function of Network Rail, I was responsible for supporting stakeholders of the Asset Information Services
-				  in all of their IT related incidents as well as providing system analysis, detailing specifications for implementation of improvements to clients’ 
-				  systems and procedures and translating customer requirements and business problems into tangible systems and processes. 
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-			
-			<div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Network Rail </h3>
-                  <p class="info">System & Application Support Advisor (Web) <span>&bull;</span> <em class="date">April 2014 - January 2015</em></p>
-
-                  <p>
-                  Working within the Asset Management function of Network Rail, I was the technical lead for implementation of a new SharePoint website. 
-				  I was also responsible for building an intranet site supporting 1000+ users.  The site provided system updates and information about desktop 
-				  and mobile applications that AIS team supported. 
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-			
-			<div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Network Rail </h3>
-                  <p class="info">System & Application Support Advisor <span>&bull;</span> <em class="date">June 2012 - March 2014</em></p>
-
-                  <p>
-                  <ul>
-					  <li>Supporting the roll-out of new applications and provide advice on all aspects of asset management related systems</li>
-					  <li>Facilitate service requests, data and process changes as directed, without compromising system and data integrity</li>
-					  <li>Undertaking systems change request analysis in compliance with company standards and liaise with stakeholders to determine detailed business requirements and propose design solutions</li>
-					  <li>Implementing agreed changes and communicating these to the wider business community</li>
-					  <li>Coordinating the activities of multiple teams to minimise business impact and downtime as well as directing appropriate communication to key stakeholders in major incident handling</li>
-					  <li>Supporting in-depth with multiple internal and external systems, such as Ellipse and all its relevant tools and reporting suites.</li>
-				  </ul>
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-	<!-- Volunteer
-		  ----------------------------------------------- -->
-		  <div class="row volunteer">
-
-			 <div class="three columns header-col">
-				<h1><span>Volunteer</span></h1>
-			 </div>
-
-			 <div class="nine columns main-col">
-
-				<div class="row item">
-
-				   <div class="twelve columns">
-
-					  <h3>Dragonfly Cancer Trust</h3>
-					  <p class="info">Digital Trustee<span>&bull;</span> <em class="date">March 2023 - Present</em></p>
-
-					  <p>
-					  Defining a digital strategy and supporting their IT needs.
-					  </p>
-					  <h3>PEM Friends</h3>
-					  <p class="info">IT Trustee<span>&bull;</span> <em class="date">January 2025 - Present</em></p>
-
-					  <p>
-					  Defining a digital strategy and supporting their IT needs.
-					  </p>
-
-				   </div>
-
-				</div> <!-- item end -->
-
-			 </div> <!-- main-col end -->
-
-		  </div> <!-- End Volunteer -->
-      </div> <!-- End Work -->
-
-
-      <!-- Skills
-      ----------------------------------------------- -->
-	  <section id="skills">
-      <div class="row skill">
-
-         <div class="three columns header-col">
-            <h1><span>Skills</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <p>
-			<ul>
-			  <li>Delivering exceptional customer service skills through delivering IT designs and solutions.</li>
-			  <li>Systems Integrator with multiple service/systems and automation management solutions.</li>
-			  <li>Extensive experience with the following programming and scripting languages; HTML, PowerShell, SQL, Java, Groovy, Python.</li>
-			  <li>In depth knowledge and understanding of current and future technology enhancements and developments.</li>
-			  <li>Experience with working web and network technologies.</li>
-		    </ul>
-            </p>
-
-				<div class="bars">
-
-				   <ul class="skills">
-					   <li><span class="bar-expand photoshop"></span><em>Microservices Architecture</em></li>
-					   <li><span class="bar-expand illustrator"></span><em>Business Analysis</em></li>
-					   <li><span class="bar-expand css"></span><em>Digital Transformation</em></li>
-					   <li><span class="bar-expand html5"></span><em>Stakeholder Management / Communication</em></li>
-					   <li><span class="bar-expand html5"></span><em>Cloud - AWS/Azure</em></li>
-				       <li><span class="bar-expand html5"></span><em>Software Development</em></li>
-					   <li><span class="bar-expand illustrator"></span><em>Project Management</em></li>
-					   <li><span class="bar-expand html5"></span><em>System Integration</em></li>
-					</ul>
-
-				</div><!-- end skill-bars -->
-
-			</div> <!-- main-col end -->
-
-      </div> <!-- End skills -->
-
-   </section> <!-- Resume Section End-->
-
-
-   <!-- Portfolio Section
-   ================================================== -->
-   <section id="portfolio">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Check Out Some of My Certificates.</h1>
-
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-01" title="">
-                        <img alt="" src="images/badges/aws-practitioner-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>AWS Cloud Practitioner</h5>
-                              <p>AWS</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
+    </section>
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">
+          Work Experience
+        </h2>
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="absolute left-0 md:left-1/2 h-full w-0.5 bg-gray-200 transform md:-translate-x-1/2"
+          ></div>
+          <!-- Experience Item 1 -->
+          <div class="relative mb-16">
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-300"
+                >
+                  <div class="flex items-center justify-end mb-4">
+                    <div class="mr-4">
+                      <h3 class="text-xl font-semibold text-gray-900">
+                        Application Architect
+                      </h3>
+                      <p class="text-primary font-medium">
+                        Fujitsu
+                      </p>
+                    </div>
+                    <div
+                      class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-lg"
+                    >
+                      <div
+                        class="w-10 h-10 flex items-center justify-center text-primary"
+                      >
+                        <i class="ri-building-4-line"></i>
+                      </div>
+                    </div>
                   </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-02" title="">
-                        <img alt="" src="images/badges/aws-sa-associate-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>AWS Solution Architect - Associate</h5>
-                              <p>AWS</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-03" title="">
-                        <img alt="" src="images/badges/aws-economics-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>AWS Cloud Economics</h5>
-                              <p>AWS</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-04" title="">
-                        <img alt="" src="images/badges/aws-partner-accreditation-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>AWS Partner: Accreditation (Technical)</h5>
-                              <p>AWS</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-05" title="">
-                        <img alt="" src="images/badges/azure-fundamentals-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Azure Fundamentals</h5>
-                              <p>AZURE</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-06" title="">
-                        <img alt="" src="images/badges/azure-developer-associate-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Azure Developer - Associate</h5>
-                              <p>AZURE</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-07" title="">
-                        <img alt="" src="images/badges/itil-foundation-v2.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>ITIL Foundation in IT Service Management</h5>
-                              <p>ITIL</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-08" title="">
-                        <img alt="" src="images/badges/linux-green-foundation.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Green Software for Practitioners</h5>
-                              <p>Linux - Green Software for Practitioners</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div>  <!-- item end -->
-
-            </div> <!-- portfolio-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-
-         <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-
-         <div id="modal-01" class="popup-modal mfp-hide">
-
-		      <!--<img class="scale-with-grid" src="images/portfolio/modals/aws-cloud-practitioner-v2.png" alt="AWS Practitioner Logo" />-->
-
-		      <div class="description-box">
-			      <h4>AWS Cloud Practitioner</h4>
-			      <p>Issued in August 2022</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Fundamentals</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/dab9e5df-1227-4426-888b-8c6d0024f292/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-
-         <div id="modal-02" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>AWS Cloud - Solution Architect - Associate</h4>
-			      <p>Issued in March 2020</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Architect</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/b310070e-999c-4ed6-94bc-aaa562710d5d/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-02 End -->
-
-         <div id="modal-03" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>AWS Cloud Economics</h4>
-			      <p>Issued in August 2022</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Economics</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/a727266c-ed50-4c89-92f4-27e2b3dcc50b/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-03 End -->
-
-         <div id="modal-04" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>AWS Partner: Accreditation (Technical)</h4>
-			      <p>Issued in August 2022</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Technical</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/45790412-9778-4889-971f-1ffb224b59fe/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-04 End -->
-
-         <div id="modal-05" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Azure Fundamentals</h4>
-			      <p>Issued in July 2020</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, Azure, Fundamentals</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/d1807d0a-971f-4f6d-af7f-0f38b83dc5b1/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-05 End -->
-
-         <div id="modal-06" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Azure Developer - Associate</h4>
-			      <p>Currently Studying </p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, Azure, Developer</span>
-		      </div>
-
-            <div class="link-box">
-               <!--<a href="#" target="_blank">Details</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-06 End -->
-
-         <div id="modal-07" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>ITIL Foundation in IT Service Management</h4>
-			      <p>Issued in April 2013</p>
-               <span class="categories"><i class="fa fa-tag"></i>ITIL, IT Service Management</span>
-		      </div>
-
-            <div class="link-box">
-               <!--<a href="#" target="_blank">Details</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-07 End -->
-
-         <div id="modal-08" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Linux: Green Software for Practitioners</h4>
-			      <p>Issued in September 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Linux, Software, Green</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/91936edb-d949-4da2-87c0-564a2af47595/public_url" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-
-
-      </div> <!-- row End -->
-
-   </section> <!-- Portfolio Section End-->
-
-
-   <!-- Call-To-Action Section
-   ================================================== -->
-   <section id="call-to-action">
-
-      <div class="row">
-
-         <div class="two columns header-col">
-
-            <h1><span>Get In Touch</span></h1>
-
-         </div>
-
-         <div class="seven columns">
-
-            <h2><span class="lead">Get In Touch</span></h2>
-            <p><span class="lead">Your moment to build a better tomorrow is here.</span></p>
-
-         </div>
-
-         <div class="three columns action">
-
-
-
-         </div>
-
-      </div>
-
-   </section> <!-- Call-To-Action Section End-->
-
-
-   <!-- Testimonials Section
-   ================================================== -->
-   <section id="testimonials">
-
-      <div class="text-container">
-
-         <div class="row">
-
-            <div class="two columns header-col">
-
-               <h1><span>Testimonials</span></h1>
-
-            </div>
-
-            <div class="ten columns flex-container">
-
-               <div class="flexslider">
-
-                  <ul class="slides">
-
-                     <li>
-                        <blockquote>
-                           <p>Emmanuel, is a great example of a professional. He applies a cool and logical approach to even the most complex of tasks and his standard of work is constantly high.
-						   His work with our LG customer for the past 4 years has been great and of the highest standard. They have nothing but admiration for his commitment and knowlegde (and happy to help manner).
-						   It has been a pleasure being his manager and watching him to grow into the Solution Architect he is now.
-                           </p>
-                           <cite>Manager, Resolve Systems</cite>
-                        </blockquote>
-                     </li> <!-- slide ends -->
-
-                     <li>
-                        <blockquote>
-                           <p>I have had the pleasure to work with Emmanuel for several years now and I am always impressed with his ability to pick up new skills and techniques. 
-                           </p>
-                           <cite>Colleague, Network Rail</cite>
-                        </blockquote>
-                     </li> <!-- slide ends -->
-
+                  <p class="text-gray-600 mb-4">July 2022 - Present</p>
+                  <ul class="text-gray-700 space-y-2">
+                    <li>
+                      • Developed a robust quality assurance framework, ensuring reliable design processes for end solutions.
+                    </li>
+                    <li>
+                      • Successfully delivered Age Estimation/Verification solutions, exemplifying your ability to address specific business needs
+                    </li>
+                    <li>
+                      • Drove the Age Verification product to completion with technical ownership, working with partners to deliver results.
+                    </li>
                   </ul>
-
-               </div> <!-- div.flexslider ends -->
-
-            </div> <!-- div.flex-container ends -->
-
-         </div> <!-- row ends -->
-
-       </div>  <!-- text-container ends -->
-
-   </section> <!-- Testimonials Section End-->
-
-
-   
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="https://twitter.com/exielabs"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/emmanuel-olawale-o/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.instagram.com/thecloudhelp"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="https://github.com/thesonicstar"><i class="fa fa-github"></i></a></li>
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
+                  <div class="mt-4 flex flex-wrap gap-2 justify-end">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                      >Azure</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                      >Python</span
+                    >
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                      >Microservices</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+              <!-- Timeline dot -->
+              <div
+                class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white transform md:-translate-x-1/2 mt-6"
+              ></div>
+            </div>
+          </div>
+          <!-- Experience Item 2 -->
+          <div class="relative mb-16">
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+              <div class="md:w-1/2 md:pl-12">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-300"
+                >
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-lg"
+                    >
+                      <div
+                        class="w-10 h-10 flex items-center justify-center text-primary"
+                      >
+                        <i class="ri-building-2-line"></i>
+                      </div>
+                    </div>
+                    <div class="ml-4">
+                      <h3 class="text-xl font-semibold text-gray-900">
+                        Senior Consultant
+                      </h3>
+                      <p class="text-primary font-medium">
+                        Resolve Systems
+                      </p>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-4">March 2016 - December 2019</p>
+                  <ul class="text-gray-700 space-y-2">
+                    <li>
+                      • Acting as an expert within the Professional Services team on the Resolve solution through implementing, developing, and deploying automation solutions on a global scale.
+                    </li>
+                    <li>
+                      • Designed and developed integrations/API with multiple systems; Service Now, Remedy, Virus Total, CA Spectrum, and more.
+                    </li>
+                    <li>
+                      • Developing solutions in Groovy (Java), Python, PowerShell, BASH
+                    </li>
+                  </ul>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                      >Automation</span
+                    >
+                    <span
+                      class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded"
+                      >Groovy</span
+                    >
+                    <span
+                      class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                      >OnPrem</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Timeline dot -->
+              <div
+                class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white transform md:-translate-x-1/2 mt-6"
+              ></div>
+            </div>
+          </div>
+          <!-- Experience Item 3 -->
+          <div class="relative mb-16">
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-300"
+                >
+                  <div class="flex items-center justify-end mb-4">
+                    <div class="mr-4">
+                      <h3 class="text-xl font-semibold text-gray-900">
+                        System + Application Support Specialist
+                      </h3>
+                      <p class="text-primary font-medium">Network Rail</p>
+                    </div>
+                    <div
+                      class="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-lg"
+                    >
+                      <div
+                        class="w-10 h-10 flex items-center justify-center text-primary"
+                      >
+                        <i class="ri-building-line"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-4">January 2015 - May 2018</p>
+                  <ul class="text-gray-700 space-y-2">
+                    <li>
+                      • Working within the Asset Management function of Network Rail, I was responsible for supporting stakeholders of the Asset Information Services in all of their IT related incidents 
+                    </li>
+                    <li>
+                      • Managing Software Deployments and providing hardware and specialist software technical support 
+                    </li>
+                    <li>
+                      • Supervised Unix and Wintel server estates, including Hyper-V and physical architecture, delivering direct server support during deployment and operations.
+                    </li>
+                  </ul>
+                  <div class="mt-4 flex flex-wrap gap-2 justify-end">
+                    <span
+                      class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded"
+                      >IT Support</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                      >SharePoint</span
+                    >
+                    <span
+                      class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded"
+                      >Technical Analysis</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+              <!-- Timeline dot -->
+              <div
+                class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white transform md:-translate-x-1/2 mt-6"
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+    <!-- Skills & Technologies Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">
+          Skills & Technologies
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Core Competencies
+            </h3>
+            <!-- Skill 1 -->
+            <div class="mb-6">
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-700 font-medium"
+                  >Solution Architecture</span
+                >
+                <span class="text-primary">Advanced</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="bg-primary h-2.5 rounded-full"
+                  style="width: 80%"
+                ></div>
+              </div>
+            </div>
+            <!-- Skill 2 -->
+            <div class="mb-6">
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-700 font-medium"
+                  >Stakeholder Management</span
+                >
+                <span class="text-primary">Advanced</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="bg-primary h-2.5 rounded-full"
+                  style="width: 85%"
+                ></div>
+              </div>
+            </div>
+            <!-- Skill 3 -->
+            <div class="mb-6">
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-700 font-medium"
+                  >Microservices Design</span
+                >
+                <span class="text-primary">Advanced</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="bg-primary h-2.5 rounded-full"
+                  style="width: 85%"
+                ></div>
+              </div>
+            </div>
+            <!-- Skill 4 -->
+            <div class="mb-6">
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-700 font-medium">Software Development</span>
+                <span class="text-primary">Advanced</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="bg-primary h-2.5 rounded-full"
+                  style="width: 73%"
+                ></div>
+              </div>
+            </div>
+            <!-- Skill 5 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-700 font-medium"
+                  >System Integration</span
+                >
+                <span class="text-primary">Advanced</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="bg-primary h-2.5 rounded-full"
+                  style="width: 75%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+              <h3 class="text-xl font-semibold mb-6 text-gray-900">
+                Technical Expertise
+              </h3>
+              <div id="skills-chart" class="w-full h-64"></div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-6 text-gray-900">
+                Languages & Frameworks
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div
+                  class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-java-fill"></i>
+                  </div>
+                  <span>Java</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-yellow-50 text-yellow-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-javascript-fill"></i>
+                  </div>
+                  <span>JavaScript</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-green-50 text-green-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-nodejs-fill"></i>
+                  </div>
+                  <span>Node.js</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-reactjs-fill"></i>
+                  </div>
+                  <span>PowerShell</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-red-50 text-red-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-java-fill"></i>
+                  </div>
+                  <span>Groovy</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-green-50 text-green-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-spring-fill"></i>
+                  </div>
+                  <span>.Net</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-purple-50 text-purple-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-database-2-fill"></i>
+                  </div>
+                  <span>SQL</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-green-50 text-green-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-database-fill"></i>
+                  </div>
+                  <span>Koitlin</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-python-fill"></i>
+                  </div>
+                  <span>Python</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-html5-fill"></i>
+                  </div>
+                  <span>HTML5/CSS3</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-code-s-slash-line"></i>
+                  </div>
+                  <span>TypeScript</span>
+                </div>
+                <div
+                  class="px-4 py-2 bg-red-50 text-red-700 rounded-full flex items-center"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-terminal-box-fill"></i>
+                  </div>
+                  <span>Bash/Shell</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Cloud Platforms
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-[#FF9900] mr-3"
+                >
+                  <i class="ri-amazon-fill"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">AWS</h4>
+                  <p class="text-sm text-gray-600">5+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-[#0078D4] mr-3"
+                >
+                  <i class="ri-microsoft-fill"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Azure</h4>
+                  <p class="text-sm text-gray-600">3+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <!--<div
+                  class="w-8 h-8 flex items-center justify-center text-[#4285F4] mr-3"
+                >
+                  <i class="ri-google-fill"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Google Cloud</h4>
+                  <p class="text-sm text-gray-600">4+ years experience</p>
+                </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              DevOps & Tools
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-[#2684FF] mr-3"
+                >
+                  <i class="ri-git-branch-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Git/GitHub</h4>
+                  <p class="text-sm text-gray-600">8+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-[#326CE5] mr-3"
+                >
+                  <i class="ri-ship-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">JIRA</h4>
+                  <p class="text-sm text-gray-600">6+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-[#2496ED] mr-3"
+                >
+                  <i class="ri-docker-fill"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Docker</h4>
+                  <p class="text-sm text-gray-600">4+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <!--<div
+                  class="w-8 h-8 flex items-center justify-center text-[#D24939] mr-3"
+                >
+                  <i class="ri-terminal-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Jenkins</h4>
+                  <p class="text-sm text-gray-600">6+ years experience</p>
+                </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Architecture Patterns
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-server-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Microservices</h4>
+                  <p class="text-sm text-gray-600">7+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-database-2-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">
+                    Event-Driven Architecture
+                  </h4>
+                  <p class="text-sm text-gray-600">3+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-cloud-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Serverless</h4>
+                  <p class="text-sm text-gray-600">2+ years experience</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <!--<div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-layout-grid-line"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">
+                    Domain-Driven Design
+                  </h4>
+                  <p class="text-sm text-gray-600">4+ years experience</p>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio & Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">
+          Portfolio & Projects
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Showcasing my key projects and contributions in solution architecture,
+          cloud development, and enterprise applications.
+        </p>
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-900">GitHub Activity</h3>
+            <a href="#" class="text-primary flex items-center hover:underline">
+              <span>View GitHub Profile</span>
+              <div class="w-5 h-5 flex items-center justify-center ml-1">
+                <i class="ri-external-link-line"></i>
+              </div>
+            </a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex flex-col md:flex-row gap-8">
+              <div class="md:w-1/3">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center text-gray-900 mr-3"
+                  >
+                    <i class="ri-github-fill"></i>
+                  </div>
+                  <h4 class="text-lg font-medium">Contribution Stats</h4>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Repositories</span>
+                    <span class="font-medium">12</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Stars</span>
+                    <span class="font-medium">0</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Forks</span>
+                    <span class="font-medium">6</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Contributions (Last Year)</span>
+                    <span class="font-medium">200</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-2/3">
+                <h4 class="text-lg font-medium mb-4">Contribution Activity</h4>
+                <div
+                  class="github-calendar p-4 rounded-lg bg-white border border-gray-100"
+                >
+                  <div class="flex flex-wrap">
+                    <!-- Simulated GitHub contribution graph -->
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <!-- Repeat for more days - just showing a sample -->
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-4"></div>
+                    <div class="github-contribution contribution-level-3"></div>
+                    <div class="github-contribution contribution-level-2"></div>
+                    <div class="github-contribution contribution-level-1"></div>
+                    <div class="github-contribution contribution-level-0"></div>
+                  </div>
+                  <div class="flex justify-between text-xs text-gray-500 mt-2">
+                    <span>Less</span>
+                    <div class="flex gap-1">
+                      <div class="w-3 h-3 bg-[#ebedf0] rounded-sm"></div>
+                      <div class="w-3 h-3 bg-[#c6e48b] rounded-sm"></div>
+                      <div class="w-3 h-3 bg-[#7bc96f] rounded-sm"></div>
+                      <div class="w-3 h-3 bg-[#239a3b] rounded-sm"></div>
+                      <div class="w-3 h-3 bg-[#196127] rounded-sm"></div>
+                    </div>
+                    <span>More</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-900">
+              Featured Projects
+            </h3>
+            <!--<div class="flex gap-2">
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 !rounded-button whitespace-nowrap text-sm active"
+              >
+                All
+              </button>
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 !rounded-button whitespace-nowrap text-sm"
+              >
+                Cloud
+              </button>
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 !rounded-button whitespace-nowrap text-sm"
+              >
+                Microservices
+              </button>
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 !rounded-button whitespace-nowrap text-sm"
+              >
+                DevOps
+              </button>
+            </div>-->
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div
+              class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="images/blogs/pushover.png"
+                  alt="Pushover notification in AWS"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Pushover notification in AWS
+                  </h4>
+                  <div
+                    class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full"
+                  >
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-primary"
+                    >
+                      <i class="ri-github-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Building a Lambda function that sends notifications via Pushover when triggered via AWS SNS.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >AWS</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                    >SNS</span
+                  >
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                    >Lambda</span
+                  >
+                  <span
+                    class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded"
+                    >Pushover</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1"
+                    >
+                      <i class="ri-star-fill"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">1</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                    >
+                      <i class="ri-git-branch-line"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">1</span>
+                  </div>
+                  <a href="https://dev.to/thesonicstar/integrating-pushover-notifications-with-lamba-and-aws-simple-notification-service-sns-3d93" class="text-primary text-sm hover:underline"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div
+              class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="images/blogs/website_architecture.png"
+                  alt="Serverless Event Processing"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Hosting a website on AWS
+                  </h4>
+                  <div
+                    class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full"
+                  >
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-primary"
+                    >
+                      <i class="ri-github-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Host a website using AWS Amplify, GitHub and domain registration via Route 53.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded"
+                    >AWS</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >Route 53</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                    >AWS Amplify</span
+                  >
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                    >HTML</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1"
+                    >
+                      <i class="ri-star-fill"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">1</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                    >
+                      <i class="ri-git-branch-line"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">1</span>
+                  </div>
+                  <a href="https://t.co/f9wgD9QDLa" class="text-primary text-sm hover:underline"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div
+              class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="images/blogs/news-feed-works.png"
+                  alt="DevOps Automation Platform"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    News Feed App
+                  </h4>
+                  <div
+                    class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full"
+                  >
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-primary"
+                    >
+                      <i class="ri-github-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  This is a Flask-based web application that allows users to fetch news articles, bookmark their favorites, and manage the bookmarks..
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                    >Flask</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >Python</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                    >Database</span
+                  >
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                    >JavaScript</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1"
+                    >
+                      <i class="ri-star-fill"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">0</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                    >
+                      <i class="ri-git-branch-line"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">0</span>
+                  </div>
+                  <a href="https://github.com/thesonicstar/newsfeedapp" class="text-primary text-sm hover:underline"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog & Publications Section -->
+    <section id="blog" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">
+          Blog & Publications
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Sharing insights and expertise on solution architecture, cloud
+          technologies, and digital transformation.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post 1 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/blogs/web3.png"
+                alt="Web3: The Intro"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">May, 2024</span>
+                <span class="mx-2 text-gray-300">•</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">3 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Web3: The Intro
+              </h3>
+              <p class="text-gray-600 mb-4">
+                The evolution of the internet has continually reshaped the way we interact, transact, and communicate. 
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  >Web3.0</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Internet</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                  >Blockchain</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">50</span>
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 ml-3 mr-1"
+                  >
+                    <i class="ri-chat-1-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">0</span>
+                </div>
+                <a href="https://medium.com/@e.olawale1/web3-the-intro-363b7678f938" class="text-primary text-sm hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Blog Post 2 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/blogs/cloud-computing.png"
+                alt="Cloud Computing can enable digital transformation"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">April, 2024</span>
+                <span class="mx-2 text-gray-300">•</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">3 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Cloud Computing can enable digital transformation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                The cloud plays a crucial role in enabling digital transformation by providing a scalable, flexible, and cost-effective foundation for businesses to adopt and leverage digital technologies..
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded"
+                  >Digital Transformation</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  >Flexible</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Cloud</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">10</span>
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 ml-3 mr-1"
+                  >
+                    <i class="ri-chat-1-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">0</span>
+                </div>
+                <a href="https://medium.com/@e.olawale1/cloud-computing-can-enable-digital-transformation-0736de7b914b" class="text-primary text-sm hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Blog Post 3 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/blogs/green-tech.png"
+                alt="Paving the Way: Sustainability and Green Tech in Digital Transformation"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">March, 2024</span>
+                <span class="mx-2 text-gray-300">•</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">4 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Paving the Way: Sustainability and Green Tech in Digital Transformation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                In an era where the imperative to address environmental challenges has never been more pressing, the intersection of digital transformation and sustainability emerges as a beacon of hope.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Green Tech</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  >Digital Transformation</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                  >Environment</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">39</span>
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 ml-3 mr-1"
+                  >
+                    <i class="ri-chat-1-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">0</span>
+                </div>
+                <a href="https://medium.com/@e.olawale1/paving-the-way-sustainability-and-green-tech-in-digital-transformation-b8283528c4c3" class="text-primary text-sm hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a
+            href="articles"
+            class="inline-flex items-center justify-center bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition"
+          >
+            <span>View All Articles</span>
+            <div class="w-5 h-5 flex items-center justify-center ml-2">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Certifications & Education Section -->
+    <section id="education" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">
+          Certifications & Education
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3
+              class="text-xl font-semibold mb-6 text-gray-900 flex items-center"
+            >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary mr-2"
+              >
+                <i class="ri-award-fill"></i>
+              </div>
+              <span>Professional Certifications</span>
+            </h3>
+            <div class="space-y-6">
+              <!-- Certification 1 -->
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-blue-700"
+                    >
+                      <i class="ri-amazon-fill"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      AWS Certified Solutions Architect - Associate
+                    </h4>
+                    <p class="text-gray-600 mb-2">Amazon Web Services</p>
+                    <!--<div class="flex items-center text-sm text-gray-500">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>Issued: June 2023 • Expires: June 2026</span>
+                    </div>-->
+                    <!--<a
+                      href="#"
+                      class="text-primary text-sm mt-2 inline-block hover:underline"
+                      >View Credential</a
+                    >-->
+                  </div>
+                </div>
+              </div>
+              <!-- Certification 2 -->
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-blue-700"
+                    >
+                      <i class="ri-microsoft-fill"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Microsoft Certified: Azure Developer Associate
+                    </h4>
+                    <p class="text-gray-600 mb-2">Microsoft</p>
+                    <!--<div class="flex items-center text-sm text-gray-500">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span
+                        >Issued: November 2022 • Expires: November 2025</span
+                      >
+                    </div>
+                    <a
+                      href="#"
+                      class="text-primary text-sm mt-2 inline-block hover:underline"
+                      >View Credential</a
+                    >-->
+                  </div>
+                </div>
+              </div>
+              <!-- Certification 3 -->
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-blue-700"
+                    >
+                      <i class="ri-cloud-fill"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Linux: Green Software for Practitioners
+                    </h4>
+                    <p class="text-gray-600 mb-2">The Linux Foundation</p>
+                    <!--<div class="flex items-center text-sm text-gray-500">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>Issued: March 2024 • Expires: March 2026</span>
+                    </div>
+                    <a
+                      href="#"
+                      class="text-primary text-sm mt-2 inline-block hover:underline"
+                      >View Credential</a
+                    >-->
+                  </div>
+                </div>
+              </div>
+              <!-- Certification 4 -->
+              <!--<div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-blue-700"
+                    >
+                      <i class="ri-ship-line"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Certified Kubernetes Administrator (CKA)
+                    </h4>
+                    <p class="text-gray-600 mb-2">
+                      Cloud Native Computing Foundation
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>Issued: January 2024 • Expires: January 2027</span>
+                    </div>
+                    <a
+                      href="#"
+                      class="text-primary text-sm mt-2 inline-block hover:underline"
+                      >View Credential</a
+                    >
+                  </div>
+                </div>
+              </div>-->
+            </div>
+          </div>
+          <div>
+            <h3
+              class="text-xl font-semibold mb-6 text-gray-900 flex items-center"
+            >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary mr-2"
+              >
+                <i class="ri-graduation-cap-fill"></i>
+              </div>
+              <span>Education</span>
+            </h3>
+            <div class="space-y-6">
+              <!-- Education 1 -->
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-gray-700"
+                    >
+                      <i class="ri-building-4-line"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      BSc Hons Computer Science
+                    </h4>
+                    <p class="text-gray-600 mb-2">Oxford Brookes University</p>
+                    <div class="flex items-center text-sm text-gray-500 mb-2">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>2008 - 2012</span>
+                    </div>
+                    <p class="text-gray-700">
+                      Specialized in Software Development and System Design.
+                      Thesis on Mobile App Development.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Education 2 -->
+              <!--<div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-gray-700"
+                    >
+                      <i class="ri-building-line"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Bachelor of Engineering in Computer Science
+                    </h4>
+                    <p class="text-gray-600 mb-2">
+                      University of California, Berkeley
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500 mb-2">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>2006 - 2010</span>
+                    </div>
+                    <p class="text-gray-700">
+                      Graduated with honors. Research focus on distributed
+                      systems and algorithms.
+                    </p>
+                  </div>
+                </div>-->
+              </div>
+              <h3
+                class="text-xl font-semibold mb-6 text-gray-900 flex items-center mt-8"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mr-2"
+                >
+                  <i class="ri-book-open-fill"></i>
+                </div>
+                <span>Professional Training</span>
+              </h3>
+              <!-- Training 1 -->
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-gray-700"
+                    >
+                      <i class="ri-file-list-3-line"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Advanced Automation Scripting in PowerShell
+                    </h4>
+                    <p class="text-gray-600 mb-2">QA</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>Completed: October 2017</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Training 2 -->
+              <!--<div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+              >
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mr-4"
+                  >
+                    <div
+                      class="w-6 h-6 flex items-center justify-center text-gray-700"
+                    >
+                      <i class="ri-file-list-3-line"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Enterprise Architecture Framework
+                    </h4>
+                    <p class="text-gray-600 mb-2">
+                      TOGAF Certification Program
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                      <div
+                        class="w-4 h-4 flex items-center justify-center mr-1"
+                      >
+                        <i class="ri-calendar-line"></i>
+                      </div>
+                      <span>Completed: May 2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Volunteer & Community Section -->
+    <section id="volunteer" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">
+          Volunteer & Community
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Contributing to the tech and wider community and making a positive impact
+          through volunteer work and mentorship.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Volunteer Role 1 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mr-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-team-line"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">IT Trustee</h3>
+                <p class="text-primary">PEM Friends</p>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">2024 - Present</p>
+            <ul class="text-gray-700 space-y-2">
+              <li>
+                • Building IT Strategy for organisation
+              </li>
+              <li>
+                • Enhancing community support
+              </li>
+              <li>• Enhancing and automating internal projects</li>
+            </ul>
+          </div>
+          <!-- Volunteer Role 2 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mr-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-community-line"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Digital Specialist
+                </h3>
+                <p class="text-primary">Dragonfly Cancer Trust</p>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">2023 - Present</p>
+            <ul class="text-gray-700 space-y-2">
+              <li>
+                • Providing digital expertise to enhance charity's capabilities.
+              </li>
+              <li>• Web Development</li>
+              <li>• Digital Transformation/Strategy</li>
+            </ul>
+          </div>
+          <!-- Volunteer Role 3 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mr-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-presentation-line"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Community Football Coach
+                </h3>
+                <p class="text-primary">MK DONS SET</p>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">2015 - 2016</p>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Coaching teenagers with disabilities</li>
+              <!--<li>• Conducted workshops on cloud architecture</li>
+              <li>• Mentored 20+ women transitioning to tech careers</li>-->
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <!-- Impact Stats -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Community Impact
+            </h3>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">200+</div>
+                <p class="text-gray-600">Volunteer Hours</p>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">30+</div>
+                <p class="text-gray-600">Students Mentored</p>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">5+</div>
+                <p class="text-gray-600">Non-profits Supported</p>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">20+</div>
+                <p class="text-gray-600">Projects</p>
+              </div>
+            </div>
+          </div>
+          <!-- Get Involved -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Get Involved
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Interested in collaborating on community initiatives or need
+              technical expertise for your non-profit? Let's work together to
+              make a difference.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-hand-heart-line"></i>
+                </div>
+                <span class="text-gray-700"
+                  >Volunteer opportunities available</span
+                >
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-team-line"></i>
+                </div>
+                <span class="text-gray-700">Mentorship programs</span>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-primary mr-3"
+                >
+                  <i class="ri-building-line"></i>
+                </div>
+                <span class="text-gray-700">Non-profit collaboration</span>
+              </div>
+            </div>
+            <a
+              href="#contact"
+              class="inline-block mt-6 bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition"
+              >Get in Touch</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">
+          Get in Touch
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Interested in working together? Feel free to reach out for
+          consultations, speaking engagements, or collaboration opportunities.
+        </p>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Send a Message
+            </h3>
+            <!--<form id="contactForm" class="relative">-->
+			<form 
+			  id="contactForm" 
+			  class="relative"
+			  action="https://formspree.io/f/mkgrjblz" 
+			  method="POST"
+			>
+			<input type="hidden" name="_subject" value="New contact form submission" />
+              <div
+                id="successMessage"
+                class="hidden absolute inset-0 bg-white bg-opacity-95 flex items-center justify-center rounded-lg"
+              >
+                <div class="text-center">
+                  <div
+                    class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
+                  >
+                    <i class="ri-check-line text-3xl text-green-500"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Message Sent!
+                  </h3>
+                  <p class="text-gray-600">
+                    Thank you for your message. I'll get back to you soon.
+                  </p>
+                  <button
+                    type="button"
+                    onclick="hideSuccessMessage()"
+                    class="mt-4 text-primary hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700 mb-2"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                    placeholder="Your email"
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                  placeholder="Subject of your message"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                id="submitButton"
+                class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition flex items-center justify-center"
+              >
+                <span>Send Message</span>
+                <div
+                  class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
+                  id="submitSpinner"
+                ></div>
+              </button>
+            </form>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">
+              Contact Information
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-mail-line"></i>
+                  </div>
+                </div>
+                <div class="min-w-0">
+                  <h4 class="font-medium text-gray-900">Email</h4>
+                  <a
+                    href="mailto:e.olawale1@gmail.com"
+                    class="text-gray-600 hover:text-primary break-all"
+                    >e.olawale1@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-linkedin-fill"></i>
+                  </div>
+                </div>
+                <div class="min-w-0">
+                  <h4 class="font-medium text-gray-900">LinkedIn</h4>
+                  <a href="https://www.linkedin.com/in/emmanuel-olawale-o/" class="text-gray-600 hover:text-primary break-all" target="_new"
+                    >Emmanuel Olawale</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-twitter-x-fill"></i>
+                  </div>
+                </div>
+                <div class="min-w-0">
+                  <h4 class="font-medium text-gray-900">Twitter</h4>
+                  <a href="https://twitter.com/exielabs" class="text-gray-600 hover:text-primary break-all" target="_new"
+                    >@exielabs</a
+                  >
+                </div>
+              </div>
+			  <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-twitter-x-fill"></i>
+                  </div>
+                </div>
+                <div class="min-w-0">
+                  <h4 class="font-medium text-gray-900">Twitter</h4>
+                  <a href="https://twitter.com/thcloudhelp" class="text-gray-600 hover:text-primary break-all" target="_new"
+                    >@thcloudhelp</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4"
+                >
+                  <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-github-fill"></i>
+                  </div>
+                </div>
+                <div class="min-w-0">
+                  <h4 class="font-medium text-gray-900">GitHub</h4>
+                  <a href="https://github.com/thesonicstar" class="text-gray-600 hover:text-primary break-all" target="_new"
+                    >thesonicstar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--<div class="mt-8">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">
+                Subscribe to Newsletter
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Get the latest articles and resources directly to your inbox.
+              </p>
+              <form class="flex flex-col space-y-2">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm"
+                />
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap text-sm"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-8"
+        >
+          <div class="flex items-center mb-6 md:mb-0">
+            <div
+              class="w-10 h-10 flex items-center justify-center text-white mr-2"
+            >
+              <i class="ri-code-box-line"></i>
+            </div>
+            <span class="text-xl font-semibold">Emmanuel Olawale</span>
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.linkedin.com/in/emmanuel-olawale-o/"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-linkedin-fill"></i>
+              </div>
+            </a>
+            <a
+              href="https://twitter.com/exielabs"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-twitter-x-fill"></i>
+              </div>
+            </a>
+            <a
+              href="https://github.com/thesonicstar"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-github-fill"></i>
+              </div>
+            </a>
+            <a
+              href="mailto:e.olawale1@gmail.com"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-mail-line"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#experience"
+                    class="text-gray-400 hover:text-white transition"
+                    >Experience</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#skills"
+                    class="text-gray-400 hover:text-white transition"
+                    >Skills</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    class="text-gray-400 hover:text-white transition"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#blog"
+                    class="text-gray-400 hover:text-white transition"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--<div>
+              <h4 class="text-lg font-semibold mb-4">Resources</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >White Papers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Presentations</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Tutorials</a
+                  >
+                </li>
+              </ul>
+            </div>-->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Services</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Architecture Consulting</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Cloud Migration</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Technical Workshops</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Code Reviews</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Contact</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#contact"
+                    class="text-gray-400 hover:text-white transition"
+                    >Get in Touch</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Speaking Engagements</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Collaboration</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800"
+          >
+            <p class="text-gray-400 mb-4 md:mb-0">
+              © 2025 Emmanuel Olawale. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Privacy Policy</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Terms of Service</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Cookie Policy</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Volunteer</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+        const themeToggle = document.getElementById("theme-toggle");
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+          themeToggle.checked = true;
+        }
+        themeToggle.addEventListener("change", function () {
+          if (this.checked) {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+          }
+          skillsChart.setOption({
+            radar: {
+              axisName: {
+                color: this.checked ? "#e5e7eb" : "#1f2937",
+              },
+            },
+            tooltip: {
+              backgroundColor: this.checked
+                ? "rgba(31, 41, 55, 0.8)"
+                : "rgba(255, 255, 255, 0.8)",
+              borderColor: this.checked ? "#374151" : "#e0e7ff",
+              textStyle: {
+                color: this.checked ? "#e5e7eb" : "#1f2937",
+              },
+            },
+          });
+        });
+        const skillsChart = echarts.init(document.getElementById("skills-chart"));
+        const skillsOption = {
+          animation: false,
+          radar: {
+            indicator: [
+              { name: "Cloud Architecture", max: 100 },
+              { name: "Techical Analysis", max: 100 },
+              { name: "Backend Development", max: 100 },
+              { name: "System Design", max: 100 },
+              { name: "API Development", max: 100 },
+              { name: "infrastructure Management", max: 100 },
+            ],
+            radius: "65%",
+            splitNumber: 4,
+            axisName: {
+              color: document.documentElement.classList.contains("dark")
+                ? "#e5e7eb"
+                : "#1f2937",
+              fontSize: 12,
+            },
+            splitLine: {
+              lineStyle: {
+                color: "rgba(87, 181, 231, 0.1)",
+              },
+            },
+            splitArea: {
+              show: true,
+              areaStyle: {
+                color: ["rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.6)"],
+              },
+            },
+            axisLine: {
+              lineStyle: {
+                color: "rgba(87, 181, 231, 0.3)",
+              },
+            },
+          },
+          series: [
+            {
+              name: "Skills",
+              type: "radar",
+              data: [
+                {
+                  value: [70, 95, 80, 90, 88, 82],
+                  name: "Technical Expertise",
+                  areaStyle: {
+                    color: "rgba(87, 181, 231, 0.1)",
+                  },
+                  lineStyle: {
+                    color: "rgba(87, 181, 231, 1)",
+                    width: 2,
+                  },
+                  itemStyle: {
+                    color: "rgba(87, 181, 231, 1)",
+                  },
+                },
+              ],
+            },
+          ],
+          tooltip: {
+            backgroundColor: document.documentElement.classList.contains("dark")
+              ? "rgba(31, 41, 55, 0.8)"
+              : "rgba(255, 255, 255, 0.8)",
+            borderColor: document.documentElement.classList.contains("dark")
+              ? "#374151"
+              : "#e0e7ff",
+            textStyle: {
+              color: document.documentElement.classList.contains("dark")
+                ? "#e5e7eb"
+                : "#1f2937",
+            },
+            formatter: function (params) {
+              return params.name + ": " + params.value;
+            },
+          },
+        };
+        skillsChart.setOption(skillsOption);
+        window.addEventListener("resize", function () {
+          skillsChart.resize();
+        });
+      });
+	  function showSuccessMessage() {
+        const successMessage = document.getElementById("successMessage");
+        successMessage.classList.remove("hidden");
+      }
+      function hideSuccessMessage() {
+        const successMessage = document.getElementById("successMessage");
+        successMessage.classList.add("hidden");
+      }
+	  
+	  
+    </script>
+	<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const form = e.target;
 
-   </footer> <!-- Footer End-->
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        document.getElementById('successMessage').classList.remove('hidden');
+        form.reset();
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    });
+  });
 
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  function hideSuccessMessage() {
+    document.getElementById('successMessage').classList.add('hidden');
+  }
+</script>
 
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
-</body>
-
+  </body>
 </html>
