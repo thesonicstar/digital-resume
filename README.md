@@ -41,7 +41,7 @@ View my digital resume at: [https://emmanuelolawale.com](https://emmanuelolawale
 ```
 digital-resume/
 ├── index.html              # Main entry point
-├── projects.html           # Displays projects and articles
+├── articles.html           # Displays articles written and published
 ├── css/                # Stylesheets
 ├── js/                 # JavaScript files
 ├── images/             # Images and icons
