@@ -66,6 +66,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Feel free to reach out if you have any questions or would like to connect:
 
-- Email: [your.email@example.com](mailto:e.olawale1@gmail.com)
+- Email: [e.olawale1@gmail.com](mailto:e.olawale1@gmail.com)
 - LinkedIn: [linkedin.com/in/emmanuel-olawale-o](https://linkedin.com/in/emmanuel-olawale-o)
 - GitHub: [github.com/thesonicstar](https://github.com/thesonicstar)
