@@ -42,6 +42,7 @@ View my digital resume at: [https://emmanuelolawale.com](https://emmanuelolawale
 digital-resume/
 ├── index.html              # Main entry point
 ├── articles.html           # Displays articles written and published
+├── projects.html           # Displays gitbub repos worked on and published
 ├── css/                # Stylesheets
 ├── js/                 # JavaScript files
 ├── images/             # Images and icons
