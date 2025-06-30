@@ -1,925 +1,911 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Emmanuel Olawale - Blogs & Projects</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-
-</head>
-
-<body>
-
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a href="index">Home</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Blogs & Projects</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">Here are my recent Blogs & Projects</h1>
-            <hr />
-            <ul class="social">
-               <li><a href="https://twitter.com/exielabs"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/emmanuel-olawale-o/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.instagram.com/thecloudhelp"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="https://github.com/thesonicstar"><i class="fa fa-github"></i></a></li>
-            </ul>
-         </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Olawale - Solution Architect</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#818cf8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --text-primary: #1f2937;
+      --text-secondary: #4b5563;
+      --border-color: #e5e7eb;
+      --toggle-bg: #e5e7eb;
+      --toggle-checked-bg: #e0e7ff;
+      }
+      :root.dark {
+      --bg-primary: #1f2937;
+      --bg-secondary: #111827;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --border-color: #374151;
+      --toggle-bg: #4b5563;
+      --toggle-checked-bg: #4f46e5;
+      }
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      transition: background-color 0.3s, color 0.3s;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #4f46e5;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      #theme-toggle {
+      opacity: 0;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      }
+      .toggle-checkbox {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      }
+      .toggle-checkbox:checked {
+      right: 0;
+      background-color: #4f46e5;
+      transform: translateX(100%);
+      }
+      .toggle-label {
+      position: relative;
+      display: block;
+      width: 48px;
+      height: 24px;
+      background-color: var(--toggle-bg);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      }
+      .toggle-checkbox:checked + .toggle-label {
+      background-color: var(--toggle-checked-bg);
+      }
+      .github-calendar {
+      background-image: linear-gradient(to right, rgba(79, 70, 229, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(79, 70, 229, 0.1) 1px, transparent 1px);
+      background-size: 14px 14px;
+      }
+      .github-contribution {
+      width: 10px;
+      height: 10px;
+      margin: 2px;
+      border-radius: 2px;
+      }
+      .contribution-level-0 { background-color: var(--bg-secondary); }
+      .contribution-level-1 { background-color: #c6e48b; }
+      .contribution-level-2 { background-color: #7bc96f; }
+      .contribution-level-3 { background-color: #239a3b; }
+      .contribution-level-4 { background-color: #196127; }
+      .dark .bg-white { background-color: var(--bg-primary); }
+      .dark .bg-gray-50 { background-color: var(--bg-secondary); }
+      .dark .text-gray-900 { color: var(--text-primary); }
+      .dark .text-gray-700 { color: var(--text-secondary); }
+      .dark .text-gray-600 { color: var(--text-secondary); }
+      .dark .border-gray-100 { border-color: var(--border-color); }
+      .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-10 h-10 flex items-center justify-center text-primary text-xl"
+          >
+            <i class="ri-code-box-line"></i>
+          </div>
+          <a
+            href="#"
+            class="text-xl font-semibold hover:text-primary transition"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            >Emmanuel Olawale</a
+          >
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a
+            href="index"
+            class="text-gray-700 hover:text-primary transition"
+            >Home</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center">
+            <div
+              class="relative inline-block w-10 mr-2 align-middle select-none"
+            >
+              <input
+                type="checkbox"
+                id="theme-toggle"
+                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer transition-transform duration-200 ease-in-out"
+              />
+              <label
+                for="theme-toggle"
+                class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+              ></label>
+            </div>
+            <span class="text-sm text-gray-700">Dark Mode</span>
+          </div>
+          <a
+            href="https://drive.google.com/file/d/1ka0gQOwvM_Pbb1r3S3ZImsi6sQ1B-nAB/view?usp=sharing"
+            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center gap-2"
+          >
+            <i class="ri-download-line"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
       </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#portfolio"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->     
-
-
-
-   <!-- Projects Section
-   ================================================== -->
-   <section id="portfolio">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Here are some of my recent mini articles</h1>
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-19" title="">
-                        <img alt="" src="images/icons/tile_blog_web3.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Web3: The Intro</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-18" title="">
-                        <img alt="" src="images/icons/tile_blog_cloud_digit.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Cloud Computing can enable digital transformation</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-17" title="">
-                        <img alt="" src="images/icons/tile_blog_greentech.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Paving the Way: Sustainability and Green Tech in Digital Transformation</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-16" title="">
-                        <img alt="" src="images/icons/tile_blog_emp_charity.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Empowering Charities: The Transformative Impact of Serverless Computing on Mission-driven Organizations</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-15" title="">
-                        <img alt="" src="images/icons/tile_blog_charity.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Embracing the Digital Age: The Importance of a Digital Strategy for Charities</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-14" title="">
-                        <img alt="" src="images/icons/tile_blog_serverless_platforms.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Let’s compare the Serverless Platforms (AWS Lambda, Azure Functions, Google Cloud Functions)</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-13" title="">
-                        <img alt="" src="images/icons/tile_blog_digital_twin.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Unravelling the Digital Twin: A Virtual Bridge to the Physical World</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-12" title="">
-                        <img alt="" src="images/icons/f1_logo.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>How AWS has transformed Formula 1 Racing</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-				
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-11" title="">
-                        <img alt="" src="images/icons/tile_blog_digital_transform.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Embracing the Digital Frontier: A Journey into Digital Transformation</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-            <!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-10" title="">
-                        <img alt="" src="images/icons/tile_blog_digital_str.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>What is a Digital Strategy?</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-09" title="">
-                        <img alt="" src="images/icons/tile_blog_webhook.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Building a Webhook in AWS</h5>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-08" title="">
-						<img alt="" src="images/icons/tile_blogepl.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>How Oracle Cloud has enhanced the English Premier League</h5>
-                              <p>How Oracle has helped the English Premier League make use of its data.</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-07" title="">
-                        <img alt="" src="images/icons/tile_blog_chipset_fpg.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>How AWS has enhanced Field Programmable Gate Arrays (FPGAs)</h5>
-                              <p>Field Programmable Gate Arrays</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			
-			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-06" title="">
-                        <img alt="" src="images/icons/tile_blog_saving_cost.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>How Serverless computing can save costs and increase scalability for businesses</h5>
-                              <p>Increase scalability for businesses</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-			
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-01" title="">
-                        <img alt="" src="images/icons/tile_blog_healthcare.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Serverless computing use cases within the healthcare industry.</h5>
-                              <p>Serverless</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-				
-				<div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-02" title="">
-                        <img alt="" src="images/icons/tile_blog_digitalSecu.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Serverless security and best practices in AWS.</h5>
-                              <p>Serverless</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-				
-				<div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-03" title="">
-                        <img alt="" src="images/icons/tile_blog_lambda.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Which is the best language for AWS Lambda (and you?)</h5>
-                              <p>AWS Lambda</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-				
-				<div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-04" title="">
-                        <img alt="" src="images/icons/tile_blog_pushover.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Pushover notification in AWS</h5>
-                              <p>AWS</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-05" title="">
-                        <img alt="" src="images/icons/tile_blog_amplify.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Hosting a website on AWS</h5>
-                              <p>AWS</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-            </div> <!-- portfolio-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-
-         <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-		  <div id="modal-19" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Web3: The Intro</h4>
-				  <p>Date: May 2024</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Web3, Internet</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/web3-the-intro-363b7678f938" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
+    </header>
+    <!-- Hero Section -->
+    <section class="py-16 bg-white border-b border-gray-100">
+      <div
+        class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-center"
+      >
+        <div class="md:col-span-2">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Emmanuel Olawale
+          </h1>
+          <h2 class="text-2xl text-primary font-semibold mb-6">
+            Software Solution Architect
+          </h2>
+          <p class="text-gray-700 mb-8 leading-relaxed">
+            Experienced Solution Architect with over 12 years of expertise in
+            designing and implementing scalable, resilient enterprise solutions.
+            Specializing in cloud architecture, microservices, and digital
+            transformation initiatives. Passionate about leveraging emerging
+            technologies to solve complex human-centric challenges.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a
+              href="https://www.linkedin.com/in/emmanuel-olawale-o/"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i
+                  class="ri-linkedin-fill text-[#0077B5] dark:text-[#0077B5]"
+                ></i>
+              </div>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://twitter.com/exielabs"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-twitter-x-fill text-black dark:text-white"></i>
+              </div>
+              <span>Twitter</span>
+            </a>
+            <a
+              href="https://github.com/thesonicstar"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-github-fill text-black dark:text-white"></i>
+              </div>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 !rounded-button transition whitespace-nowrap dark:text-gray-300"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-mail-line text-gray-700 dark:text-gray-300"></i>
+              </div>
+              <span>e.olawale1@gmail.com</span>
+            </a>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="#contact"
+              class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition"
+            >
+              Contact Me
+            </a>
+            <a
+              href="#projects"
+              class="border border-gray-300 text-gray-700 px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition"
+            >
+              View Projects
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="w-64 h-64 mx-auto overflow-hidden rounded-full border-4 border-white shadow-lg"
+          >
+            <img
+              src="images/profilepic.jpg"
+              alt="Emmanuel Olawale"
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div
+            class="absolute -bottom-4 right-1/4 bg-white shadow-md rounded-full p-3"
+          >
+            <div
+              class="w-10 h-10 flex items-center justify-center text-primary"
+            >
+              <i class="ri-verified-badge-fill"></i>
             </div>
-
-	      </div><!-- modal-19 End -->
-		  <div id="modal-18" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Cloud Computing can enable digital transformation</h4>
-				  <p>Date: April 2024</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Cloud Computing, Digital Transformation</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/cloud-computing-can-enable-digital-transformation-0736de7b914b" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-18 End -->
-		  <div id="modal-17" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Paving the Way: Sustainability and Green Tech in Digital Transformation</h4>
-				  <p>Date: March 2024</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Charity, Digital Transformation, Green Technology</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/paving-the-way-sustainability-and-green-tech-in-digital-transformation-b8283528c4c3" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-17 End -->
-		  <div id="modal-16" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Empowering Charities: The Transformative Impact of Serverless Computing on Mission-driven Organizations</h4>
-				  <p>Date: Janurary 2024</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Charity, Serverless Computing</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/empowering-charities-the-transformative-impact-of-serverless-computing-on-mission-driven-1ce31568fb33" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-16 End -->
-		  <div id="modal-15" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Embracing the Digital Age: The Importance of a Digital Strategy for Charities</h4>
-				  <p>Date: November 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Charity, Digital Strategy</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/embracing-the-digital-age-the-importance-of-a-digital-strategy-for-charities-3b6f8f80d9d2" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-15 End -->
-		  <div id="modal-14" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Let’s compare the Serverless Platforms (AWS Lambda, Azure Functions, Google Cloud Functions) </h4>
-				  <p>Date: November 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Serverless Platforms, AWS, Azure, GCP</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/lets-compare-the-serverless-platforms-aws-lambda-azure-functions-google-cloud-functions-8e401250e60f" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-14 End -->
-		<div id="modal-13" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Unravelling the Digital Twin: A Virtual Bridge to the Physical World</h4>
-				  <p>Date: September 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Digital Twin</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/unravelling-the-digital-twin-a-virtual-bridge-to-the-physical-world-ae444cb37968" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-13 End -->
-		<div id="modal-12" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>How AWS has transformed Formula 1 Racing</h4>
-				  <p>Date: August 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, AWS, Formula1</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/how-aws-has-transformed-formula-1-racing-89057f9c8a2b" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-12 End -->
-		  
-		<div id="modal-11" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Embracing the Digital Frontier: A Journey into Digital Transformation</h4>
-				  <p>Date: August 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Transformation</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/embracing-the-digital-frontier-a-journey-into-digital-transformation-44a722305550" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-11 End -->
-		  
-         <div id="modal-10" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>What is a Digital Strategy?</h4>
-				  <p>Date: July 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Article, Strategy</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://dev.to/thesonicstar/what-is-a-digital-strategy-3pe8" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-10 End -->
-		  
-		  <div id="modal-09" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Building a Webhook in AWS</h4>
-				  <p>Date: June 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Dev, AWS, Webhook</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://dev.to/thesonicstar/building-a-webhook-in-aws-4bje" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-09 End -->
-		 
-		 
-		 <div id="modal-08" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>How Oracle Cloud has enhanced the English Premier League</h4>
-			      <p>How Oracle has helped the English Premier League make use of its data.</p>
-				  <p>Date: May 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Oracle Cloud, English Premier League</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://dev.to/thesonicstar/how-oracle-cloud-has-enhanced-the-english-premier-league-18pi" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-08 End -->
-		 
-		 <div id="modal-07" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>How AWS has enhanced Field Programmable Gate Arrays (FPGAs)</h4>
-			      <!--<p>Exploration on how serverless computing has taken root within the healthcare industry</p>-->
-				  <p>Date: May 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Cloud, Field Programmable Gate Arrays</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/how-aws-has-enhanced-field-programmable-gate-arrays-fpgas-fb76b081012b" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-07 End -->
-		 
-		 <div id="modal-06" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>How Serverless computing can save costs and increase scalability for businesses</h4>
-			      <!--<p>Exploration on how serverless computing has taken root within the healthcare industry</p>-->
-				  <p>Date: May 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Serverless, Business</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://dev.to/thesonicstar/how-serverless-computing-can-save-costs-and-increase-scalability-for-businesses-5c3e" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-06 End -->
-		  
-		  
-		 
-		 <div id="modal-01" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Serverless computing use cases within the healthcare industry.</h4>
-			      <p>Exploration on how serverless computing has taken root within the healthcare industry</p>
-				  <p>Date: April 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Cloud, Serverless, Healthcare</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/serverless-computing-use-cases-within-the-healthcare-industry-b548c383d170" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-		  
-		  <div id="modal-02" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/blogs/cover-Security-in-Serverless-1.png" alt="" />
-
-		      <div class="description-box">
-			      <h4>Serverless security and best practices in AWS.</h4>
-			      <p>Documentation of the best practices when implementing security within your serverless applications.</p>
-				  <p>Date: April 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Cloud, AWS, Serverless, Security, Best Practices</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://dev.to/thesonicstar/serverless-security-and-best-practices-in-aws-820" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-		  
-		  <div id="modal-03" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Which is the best language for AWS Lambda (and you?)</h4>
-			      <p>Quick overview of the different programming languages on offer within AWS Lambda</p>
-				  <p>Date: March 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Blog, Cloud, AWS, Lambda</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://medium.com/@e.olawale1/which-is-the-best-language-for-aws-lambda-and-you-2bab515f650f" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <!--<a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>-->
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-		  
-		  <div id="modal-04" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Pushover notification in AWS</h4>
-			      <p>Building a Lambda function that sends notifications via Pushover when triggered via AWS SNS</p>
-				  <p>Date: March 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Dev, Cloud, AWS, Lambda, SNS, Pushover</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://dev.to/thesonicstar/integrating-pushover-notifications-with-lamba-and-aws-simple-notification-service-sns-3d93" target="_new">Details</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			   <a href="https://github.com/thesonicstar/pushover-lamba" target="_new">GitHub</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-02 End -->
-
-         <div id="modal-05" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/blogs/website_architecture.png" alt="Architecture" />
-
-		      <div class="description-box">
-			      <h4>Hosting a website on AWS</h4>
-				  <p>Host a website using AWS Amplify, GitHub and domain registration via Route 53.</p>
-			      <p>Date: February 2023</p>
-               <span class="categories"><i class="fa fa-tag"></i>Dev, Cloud, AWS, Website</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://t.co/f9wgD9QDLa" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-03 End -->
-
-         <!--<div id="modal-03" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>AWS Cloud Economics</h4>
-			      <p>Issued in August 2022</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Economics</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/a727266c-ed50-4c89-92f4-27e2b3dcc50b/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-03 End -->
-
-         <!--<div id="modal-04" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>AWS Partner: Accreditation (Technical)</h4>
-			      <p>Issued in August 2022</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Technical</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/45790412-9778-4889-971f-1ffb224b59fe/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-04 End -->
-
-         <!--<div id="modal-05" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Azure Fundamentals</h4>
-			      <p>Issued in July 2020</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, Azure, Fundamentals</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.credly.com/badges/d1807d0a-971f-4f6d-af7f-0f38b83dc5b1/public_url" target="_new">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-05 End -->
-
-         <!--<div id="modal-06" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>Azure Developer - Associate</h4>
-			      <p>Currently Studying </p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, Azure, Developer</span>
-		      </div>
-
-            <div class="link-box">
-               <!--<a href="#" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-06 End -->
-
-         <!--<div id="modal-07" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>ITIL Foundation in IT Service Management</h4>
-			      <p>Issued in April 2013</p>
-               <span class="categories"><i class="fa fa-tag"></i>ITIL, IT Service Management</span>
-		      </div>
-
-            <div class="link-box">
-               <!--<a href="#" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-07 End -->
-
-         <!--<div id="modal-08" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="#" alt="" />
-
-		      <div class="description-box">
-			      <h4>AWS: Serverless</h4>
-			      <p>Currently Studying</p>
-               <span class="categories"><i class="fa fa-tag"></i>Cloud, AWS, Serverless</span>
-		      </div>
-
-            <div class="link-box">
-               <!--<a href="#" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-
-
-      </div> <!-- row End -->
-
-   </section> <!-- Projects Section End-->
-   
-   
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="https://twitter.com/exielabs"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/emmanuel-olawale-a989a35a/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.instagram.com/exielabs/?igshid=YmMyMTA2M2Y%3D"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="https://github.com/thesonicstar"><i class="fa fa-github"></i></a></li>
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
+          </div>
+        </div>
       </div>
-
-   </footer> <!-- Footer End-->
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
-</body>
-
+    </section>
+    
+    <!-- Blog & Publications Section -->
+    <section id="blog" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">
+          Projects
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Sharing insights and expertise on solution architecture, cloud
+          technologies, and digital transformation.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<!-- Blog Post 17 -->
+          <div
+              class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="images/projects/appointment-scheduling-solution.png"
+                  alt="Healthcare Booking System"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Healthcare Booking System
+                  </h4>
+                  <div
+                    class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full"
+                  >
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-primary"
+                    >
+                      <i class="ri-github-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  This is a Cloud based Web application that Helps patients book and manage appointments while receiving reminders via SMS or email.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                    >AWS</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >Python</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                    >DynamnoDB</span
+                  >
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                    >Serverless</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1"
+                    >
+                      <i class="ri-star-fill"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">0</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                    >
+                      <i class="ri-git-branch-line"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">1</span>
+                  </div>
+                  <a href="https://github.com/thesonicstar/appointment-backend" class="text-primary text-sm hover:underline"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+            </div>
+		  <!--END -->
+          <!-- Blog Post 1 -->
+          <!--<div
+            class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/blogs/web3.png"
+                alt="Web3: The Intro"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">May, 2024</span>
+                <span class="mx-2 text-gray-300">•</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">3 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Web3: The Intro
+              </h3>
+              <p class="text-gray-600 mb-4">
+                The evolution of the internet has continually reshaped the way we interact, transact, and communicate. 
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  >Web3.0</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Internet</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                  >Blockchain</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">65</span>
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 ml-3 mr-1"
+                  >
+                    <i class="ri-chat-1-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">0</span>
+                </div>
+                <a href="https://dev.to/thesonicstar/web3-the-intro-2k5c" class="text-primary text-sm hover:underline" target="_new"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>-->
+          <!-- Blog Post 2 -->
+          <!--<div
+            class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/blogs/cloud-computing.png"
+                alt="Cloud Computing can enable digital transformation"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">April, 2024</span>
+                <span class="mx-2 text-gray-300">•</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">3 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Cloud Computing can enable digital transformation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                The cloud plays a crucial role in enabling digital transformation by providing a scalable, flexible, and cost-effective foundation for businesses to adopt and leverage digital technologies..
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded"
+                  >Digital Transformation</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  >Flexible</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Cloud</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">10</span>
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 ml-3 mr-1"
+                  >
+                    <i class="ri-chat-1-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">0</span>
+                </div>
+                <a href="https://medium.com/@e.olawale1/cloud-computing-can-enable-digital-transformation-0736de7b914b" class="text-primary text-sm hover:underline" target="_new"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>-->
+          <!-- Blog Post 3 -->
+          <!--<div
+            class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/blogs/green-tech.png"
+                alt="Paving the Way: Sustainability and Green Tech in Digital Transformation"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">March, 2024</span>
+                <span class="mx-2 text-gray-300">•</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-500 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-sm text-gray-500">4 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Paving the Way: Sustainability and Green Tech in Digital Transformation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                In an era where the imperative to address environmental challenges has never been more pressing, the intersection of digital transformation and sustainability emerges as a beacon of hope.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Green Tech</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  >Digital Transformation</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                  >Environment</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">39</span>
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-500 ml-3 mr-1"
+                  >
+                    <i class="ri-chat-1-line"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">0</span>
+                </div>
+                <a href="https://medium.com/@e.olawale1/paving-the-way-sustainability-and-green-tech-in-digital-transformation-b8283528c4c3" class="text-primary text-sm hover:underline" target="_new"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>-->
+		  <!--END -->
+        </div>
+        <!--<div class="text-center mt-10">
+          <a
+            href="#"
+            class="inline-flex items-center justify-center bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition"
+          >
+            <span>View All Articles</span>
+            <div class="w-5 h-5 flex items-center justify-center ml-2">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </a>
+        </div>-->
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-8"
+        >
+          <div class="flex items-center mb-6 md:mb-0">
+            <div
+              class="w-10 h-10 flex items-center justify-center text-white mr-2"
+            >
+              <i class="ri-code-box-line"></i>
+            </div>
+            <span class="text-xl font-semibold">Emmanuel Olawale</span>
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.linkedin.com/in/emmanuel-olawale-o/"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-linkedin-fill"></i>
+              </div>
+            </a>
+            <a
+              href="https://twitter.com/exielabs"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-twitter-x-fill"></i>
+              </div>
+            </a>
+            <a
+              href="https://github.com/thesonicstar"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-github-fill"></i>
+              </div>
+            </a>
+            <a
+              href="mailto:e.olawale1@gmail.com"
+              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+            >
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-mail-line"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index#experience"
+                    class="text-gray-400 hover:text-white transition"
+                    >Experience</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index#skills"
+                    class="text-gray-400 hover:text-white transition"
+                    >Skills</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index#projects"
+                    class="text-gray-400 hover:text-white transition"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index#blog"
+                    class="text-gray-400 hover:text-white transition"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--<div>
+              <h4 class="text-lg font-semibold mb-4">Resources</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >White Papers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Presentations</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition"
+                    >Tutorials</a
+                  >
+                </li>
+              </ul>
+            </div>-->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Services</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Architecture Consulting</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Cloud Migration</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Technical Workshops</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Code Reviews</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Contact</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#contact"
+                    class="text-gray-400 hover:text-white transition"
+                    >Get in Touch</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Speaking Engagements</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-white transition"
+                    >Collaboration</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800"
+          >
+            <p class="text-gray-400 mb-4 md:mb-0">
+              © 2025 Emmanuel Olawale. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Privacy Policy</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Terms of Service</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Cookie Policy</a
+              >
+              <a href="index#volunteer" class="text-gray-400 hover:text-white transition"
+                >Volunteer</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+        const themeToggle = document.getElementById("theme-toggle");
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+          themeToggle.checked = true;
+        }
+        themeToggle.addEventListener("change", function () {
+          if (this.checked) {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+          }
+          skillsChart.setOption({
+            radar: {
+              axisName: {
+                color: this.checked ? "#e5e7eb" : "#1f2937",
+              },
+            },
+            tooltip: {
+              backgroundColor: this.checked
+                ? "rgba(31, 41, 55, 0.8)"
+                : "rgba(255, 255, 255, 0.8)",
+              borderColor: this.checked ? "#374151" : "#e0e7ff",
+              textStyle: {
+                color: this.checked ? "#e5e7eb" : "#1f2937",
+              },
+            },
+          });
+        });
+        const skillsChart = echarts.init(document.getElementById("skills-chart"));
+        const skillsOption = {
+          animation: false,
+          radar: {
+            indicator: [
+              { name: "Cloud Architecture", max: 100 },
+              { name: "Techical Analysis", max: 100 },
+              { name: "Backend Development", max: 100 },
+              { name: "System Design", max: 100 },
+              { name: "API Development", max: 100 },
+              { name: "infrastructure Management", max: 100 },
+            ],
+            radius: "65%",
+            splitNumber: 4,
+            axisName: {
+              color: document.documentElement.classList.contains("dark")
+                ? "#e5e7eb"
+                : "#1f2937",
+              fontSize: 12,
+            },
+            splitLine: {
+              lineStyle: {
+                color: "rgba(87, 181, 231, 0.1)",
+              },
+            },
+            splitArea: {
+              show: true,
+              areaStyle: {
+                color: ["rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.6)"],
+              },
+            },
+            axisLine: {
+              lineStyle: {
+                color: "rgba(87, 181, 231, 0.3)",
+              },
+            },
+          },
+          series: [
+            {
+              name: "Skills",
+              type: "radar",
+              data: [
+                {
+                  value: [70, 95, 80, 90, 88, 82],
+                  name: "Technical Expertise",
+                  areaStyle: {
+                    color: "rgba(87, 181, 231, 0.1)",
+                  },
+                  lineStyle: {
+                    color: "rgba(87, 181, 231, 1)",
+                    width: 2,
+                  },
+                  itemStyle: {
+                    color: "rgba(87, 181, 231, 1)",
+                  },
+                },
+              ],
+            },
+          ],
+          tooltip: {
+            backgroundColor: document.documentElement.classList.contains("dark")
+              ? "rgba(31, 41, 55, 0.8)"
+              : "rgba(255, 255, 255, 0.8)",
+            borderColor: document.documentElement.classList.contains("dark")
+              ? "#374151"
+              : "#e0e7ff",
+            textStyle: {
+              color: document.documentElement.classList.contains("dark")
+                ? "#e5e7eb"
+                : "#1f2937",
+            },
+            formatter: function (params) {
+              return params.name + ": " + params.value;
+            },
+          },
+        };
+        skillsChart.setOption(skillsOption);
+        window.addEventListener("resize", function () {
+          skillsChart.resize();
+        });
+      });
+	  function showSuccessMessage() {
+        const successMessage = document.getElementById("successMessage");
+        successMessage.classList.remove("hidden");
+      }
+      function hideSuccessMessage() {
+        const successMessage = document.getElementById("successMessage");
+        successMessage.classList.add("hidden");
+      }
+    </script>
+  </body>
 </html>
