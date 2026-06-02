@@ -49,10 +49,6 @@ digital-resume/
 └── README.md               # This file
 ```
 
-## 📱 Screenshots
-
-[Consider adding screenshots of your digital resume here]
-
 ## 🔄 Keeping Your Resume Updated
 
 1. Edit the relevant HTML, CSS, or JavaScript files
