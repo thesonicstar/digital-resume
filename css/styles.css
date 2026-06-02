@@ -1,0 +1,94 @@
+/*
+  Digital Resume shared stylesheet
+  Extracted from inline <style> blocks to keep HTML files cleaner.
+*/
+
+:root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --text-primary: #1f2937;
+      --text-secondary: #4b5563;
+      --border-color: #e5e7eb;
+      --toggle-bg: #e5e7eb;
+      --toggle-checked-bg: #e0e7ff;
+      }
+      :root.dark {
+      --bg-primary: #1f2937;
+      --bg-secondary: #111827;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --border-color: #374151;
+      --toggle-bg: #4b5563;
+      --toggle-checked-bg: #4f46e5;
+      }
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      transition: background-color 0.3s, color 0.3s;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #4f46e5;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      #theme-toggle {
+      opacity: 0;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      }
+      .toggle-checkbox {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      }
+      .toggle-checkbox:checked {
+      right: 0;
+      background-color: #4f46e5;
+      transform: translateX(100%);
+      }
+      .toggle-label {
+      position: relative;
+      display: block;
+      width: 48px;
+      height: 24px;
+      background-color: var(--toggle-bg);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      }
+      .toggle-checkbox:checked + .toggle-label {
+      background-color: var(--toggle-checked-bg);
+      }
+      .github-calendar {
+      background-image: linear-gradient(to right, rgba(79, 70, 229, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(79, 70, 229, 0.1) 1px, transparent 1px);
+      background-size: 14px 14px;
+      }
+      .github-contribution {
+      width: 10px;
+      height: 10px;
+      margin: 2px;
+      border-radius: 2px;
+      }
+      .contribution-level-0 { background-color: var(--bg-secondary); }
+      .contribution-level-1 { background-color: #c6e48b; }
+      .contribution-level-2 { background-color: #7bc96f; }
+      .contribution-level-3 { background-color: #239a3b; }
+      .contribution-level-4 { background-color: #196127; }
+      .dark .bg-white { background-color: var(--bg-primary); }
+      .dark .bg-gray-50 { background-color: var(--bg-secondary); }
+      .dark .text-gray-900 { color: var(--text-primary); }
+      .dark .text-gray-700 { color: var(--text-secondary); }
+      .dark .text-gray-600 { color: var(--text-secondary); }
+      .dark .border-gray-100 { border-color: var(--border-color); }
+      .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }

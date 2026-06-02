@@ -5,27 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emmanuel Olawale - Solution Architect</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { primary: "#4f46e5", secondary: "#818cf8" },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
-      };
-    </script>
+    <script src="js/tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,98 +20,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
-    <style>
-      :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f9fafb;
-      --text-primary: #1f2937;
-      --text-secondary: #4b5563;
-      --border-color: #e5e7eb;
-      --toggle-bg: #e5e7eb;
-      --toggle-checked-bg: #e0e7ff;
-      }
-      :root.dark {
-      --bg-primary: #1f2937;
-      --bg-secondary: #111827;
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --border-color: #374151;
-      --toggle-bg: #4b5563;
-      --toggle-checked-bg: #4f46e5;
-      }
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      body {
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-      transition: background-color 0.3s, color 0.3s;
-      }
-      input[type="range"]::-webkit-slider-thumb {
-      appearance: none;
-      width: 18px;
-      height: 18px;
-      background: #4f46e5;
-      border-radius: 50%;
-      cursor: pointer;
-      }
-      #theme-toggle {
-      opacity: 0;
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      }
-      .toggle-checkbox {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      background-color: white;
-      border-radius: 50%;
-      transition: transform 0.3s;
-      }
-      .toggle-checkbox:checked {
-      right: 0;
-      background-color: #4f46e5;
-      transform: translateX(100%);
-      }
-      .toggle-label {
-      position: relative;
-      display: block;
-      width: 48px;
-      height: 24px;
-      background-color: var(--toggle-bg);
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      }
-      .toggle-checkbox:checked + .toggle-label {
-      background-color: var(--toggle-checked-bg);
-      }
-      .github-calendar {
-      background-image: linear-gradient(to right, rgba(79, 70, 229, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(79, 70, 229, 0.1) 1px, transparent 1px);
-      background-size: 14px 14px;
-      }
-      .github-contribution {
-      width: 10px;
-      height: 10px;
-      margin: 2px;
-      border-radius: 2px;
-      }
-      .contribution-level-0 { background-color: var(--bg-secondary); }
-      .contribution-level-1 { background-color: #c6e48b; }
-      .contribution-level-2 { background-color: #7bc96f; }
-      .contribution-level-3 { background-color: #239a3b; }
-      .contribution-level-4 { background-color: #196127; }
-      .dark .bg-white { background-color: var(--bg-primary); }
-      .dark .bg-gray-50 { background-color: var(--bg-secondary); }
-      .dark .text-gray-900 { color: var(--text-primary); }
-      .dark .text-gray-700 { color: var(--text-secondary); }
-      .dark .text-gray-600 { color: var(--text-secondary); }
-      .dark .border-gray-100 { border-color: var(--border-color); }
-      .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
-    </style>
+	<script src="js/main.js" defer></script>
   </head>
   <body class="bg-gray-50">
     <!-- Header Section -->
@@ -160,6 +51,9 @@
           >
           <a href="#skills" class="text-gray-700 hover:text-primary transition"
             >Skills</a
+          >
+          <a href="#products" class="text-gray-700 hover:text-primary transition"
+            >Products</a
           >
           <a
             href="#projects"
@@ -641,7 +535,7 @@
                   <div class="w-5 h-5 flex items-center justify-center mr-2">
                     <i class="ri-database-fill"></i>
                   </div>
-                  <span>Koitlin</span>
+                  <span>Kotlin</span>
                 </div>
                 <div
                   class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full flex items-center"
@@ -832,6 +726,132 @@
 
 
     </section>
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">
+          Products I’ve Built
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Product-led applications I have designed, built, and deployed to solve
+          real-world challenges across service reliability, healthcare support,
+          and digital workflows.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Product: Trusted Status Sentinel -->
+          <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300">
+            <div class="h-56 overflow-hidden">
+              <img
+                src="images/projects/system-outage.png"
+                alt="Trusted Status Sentinel"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <p class="text-sm text-primary font-medium mb-1">Reliability Intelligence</p>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Trusted Status Sentinel
+                  </h3>
+                </div>
+                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+                  <i class="ri-signal-tower-line"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Independent service reliability verification platform that monitors
+                major digital services from a UK probe node. It applies consecutive-run
+                validation to reduce false alerts and publishes a calm, factual status
+                signal separate from vendor status pages.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">AWS</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Lambda</span>
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">CloudFront</span>
+                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">DynamoDB</span>
+                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Status Monitoring</span>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href="https://trustedstatus.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-primary text-white px-4 py-2 !rounded-button text-sm font-medium hover:bg-primary/90 transition"
+                >
+                  Visit Product
+                </a>
+                <a
+                  href="https://github.com/thesonicstar/trustedstatus-showcase"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-gray-300 text-gray-700 px-4 py-2 !rounded-button text-sm font-medium hover:bg-gray-50 transition"
+                >
+                  View Showcase
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product: ExieCare -->
+          <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300">
+            <div class="h-56 overflow-hidden">
+              <img
+                src="images/projects/exiecare.png"
+                alt="ExieCare"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <p class="text-sm text-primary font-medium mb-1">Digital Health Companion</p>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    ExieCare
+                  </h3>
+                </div>
+                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+                  <i class="ri-heart-pulse-line"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">
+                UK-focused digital health companion that helps users understand
+                healthcare letters, manage appointments, track important actions,
+                and access clear information about NHS rights. Built as an information
+                companion, not a medical advice tool.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">AWS</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Cognito</span>
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">DynamoDB</span>
+                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Lambda</span>
+                <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded">Healthcare UX</span>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href="https://exiecare.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-primary text-white px-4 py-2 !rounded-button text-sm font-medium hover:bg-primary/90 transition"
+                >
+                  Visit Product
+                </a>
+                <a
+                  href="https://github.com/thesonicstar/exiecare-public"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-gray-300 text-gray-700 px-4 py-2 !rounded-button text-sm font-medium hover:bg-gray-50 transition"
+                >
+                  View Showcase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Portfolio & Projects Section -->
     <section id="projects" class="py-16 bg-white">
       <div class="container mx-auto px-4">
@@ -839,7 +859,7 @@
           Portfolio & Projects
         </h2>
         <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Showcasing my key projects and contributions in solution architecture,
+          Showcasing selected technical projects and contributions in solution architecture,
           cloud development, and enterprise applications.
         </p>
         <div class="mb-8">
@@ -1095,7 +1115,7 @@
                     </div>
                     <span class="text-sm text-gray-600">1</span>
                   </div>
-                  <a href="https://dev.to/thesonicstar/integrating-pushover-notifications-with-lamba-and-aws-simple-notification-service-sns-3d93" class="text-primary text-sm hover:underline"
+                  <a href="https://dev.to/thesonicstar/integrating-pushover-notifications-with-Lambda-and-aws-simple-notification-service-sns-3d93" class="text-primary text-sm hover:underline"
                     >View Project</a
                   >
                 </div>
@@ -1198,7 +1218,7 @@
                   </div>
                 </div>
                 <p class="text-gray-600 mb-4">
-                  This is a Flask-based web application that allows users to fetch news articles, bookmark their favorites, and manage the bookmarks..
+                  This is a Flask-based web application that allows users to fetch news articles, bookmark their favorites, and manage the bookmarks.
                 </p>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span
@@ -1366,7 +1386,7 @@
                 Cloud Computing can enable digital transformation
               </h3>
               <p class="text-gray-600 mb-4">
-                The cloud plays a crucial role in enabling digital transformation by providing a scalable, flexible, and cost-effective foundation for businesses to adopt and leverage digital technologies..
+                The cloud plays a crucial role in enabling digital transformation by providing a scalable, flexible, and cost-effective foundation for businesses to adopt and leverage digital technologies.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span
@@ -2135,7 +2155,7 @@
                 </div>
                 <div class="min-w-0">
                   <h4 class="font-medium text-gray-900">LinkedIn</h4>
-                  <a href="https://www.linkedin.com/in/emmanuel-olawale-o/" class="text-gray-600 hover:text-primary break-all" target="_new"
+                  <a href="https://www.linkedin.com/in/emmanuel-olawale-o/" class="text-gray-600 hover:text-primary break-all" target="_blank" rel="noopener noreferrer"
                     >Emmanuel Olawale</a
                   >
                 </div>
@@ -2150,7 +2170,7 @@
                 </div>
                 <div class="min-w-0">
                   <h4 class="font-medium text-gray-900">Twitter</h4>
-                  <a href="https://twitter.com/exielabs" class="text-gray-600 hover:text-primary break-all" target="_new"
+                  <a href="https://twitter.com/exielabs" class="text-gray-600 hover:text-primary break-all" target="_blank" rel="noopener noreferrer"
                     >@exielabs</a
                   >
                 </div>
@@ -2165,7 +2185,7 @@
                 </div>
                 <div class="min-w-0">
                   <h4 class="font-medium text-gray-900">Twitter</h4>
-                  <a href="https://twitter.com/thcloudhelp" class="text-gray-600 hover:text-primary break-all" target="_new"
+                  <a href="https://twitter.com/thcloudhelp" class="text-gray-600 hover:text-primary break-all" target="_blank" rel="noopener noreferrer"
                     >@thcloudhelp</a
                   >
                 </div>
@@ -2180,7 +2200,7 @@
                 </div>
                 <div class="min-w-0">
                   <h4 class="font-medium text-gray-900">Instagram</h4>
-                  <a href="https://www.instagram.com/thecloudhelp/" class="text-gray-600 hover:text-primary break-all" target="_new"
+                  <a href="https://www.instagram.com/thecloudhelp/" class="text-gray-600 hover:text-primary break-all" target="_blank" rel="noopener noreferrer"
                     >thecloudhelp</a
                   >
                 </div>
@@ -2195,7 +2215,7 @@
                 </div>
                 <div class="min-w-0">
                   <h4 class="font-medium text-gray-900">GitHub</h4>
-                  <a href="https://github.com/thesonicstar" class="text-gray-600 hover:text-primary break-all" target="_new"
+                  <a href="https://github.com/thesonicstar" class="text-gray-600 hover:text-primary break-all" target="_blank" rel="noopener noreferrer"
                     >thesonicstar</a
                   >
                 </div>
@@ -2208,7 +2228,7 @@
 			  <p class="text-gray-600 text-sm mb-4">
 				Get the latest news directly to your inbox.
 			  </p>
-			  <a href="https://thecloudhelp.beehiiv.com/subscribe" target="_new" class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap text-sm flex justify-center items-center">
+			  <a href="https://thecloudhelp.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap text-sm flex justify-center items-center">
 				Subscribe
 			  </a>
 			</div>
@@ -2288,6 +2308,13 @@
                     href="#skills"
                     class="text-gray-400 hover:text-white transition"
                     >Skills</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#products"
+                    class="text-gray-400 hover:text-white transition"
+                    >Products</a
                   >
                 </li>
                 <li>
@@ -2403,170 +2430,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            if (targetId === "#") return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          });
-        });
-        const themeToggle = document.getElementById("theme-toggle");
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-          document.documentElement.classList.add("dark");
-          themeToggle.checked = true;
-        }
-        themeToggle.addEventListener("change", function () {
-          if (this.checked) {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-          } else {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-          }
-          skillsChart.setOption({
-            radar: {
-              axisName: {
-                color: this.checked ? "#e5e7eb" : "#1f2937",
-              },
-            },
-            tooltip: {
-              backgroundColor: this.checked
-                ? "rgba(31, 41, 55, 0.8)"
-                : "rgba(255, 255, 255, 0.8)",
-              borderColor: this.checked ? "#374151" : "#e0e7ff",
-              textStyle: {
-                color: this.checked ? "#e5e7eb" : "#1f2937",
-              },
-            },
-          });
-        });
-        const skillsChart = echarts.init(document.getElementById("skills-chart"));
-        const skillsOption = {
-          animation: false,
-          radar: {
-            indicator: [
-              { name: "Solution Architecture", max: 100 },
-              { name: "Technical Analysis", max: 100 },
-              { name: "Enterprise Integration", max: 100 },
-              { name: "System Design", max: 100 },
-              { name: "Reliability Engineering", max: 100 },
-              { name: "Infrastructure Management", max: 100 },
-            ],
-            radius: "65%",
-            splitNumber: 4,
-            axisName: {
-              color: document.documentElement.classList.contains("dark")
-                ? "#e5e7eb"
-                : "#1f2937",
-              fontSize: 12,
-            },
-            splitLine: {
-              lineStyle: {
-                color: "rgba(87, 181, 231, 0.1)",
-              },
-            },
-            splitArea: {
-              show: true,
-              areaStyle: {
-                color: ["rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.6)"],
-              },
-            },
-            axisLine: {
-              lineStyle: {
-                color: "rgba(87, 181, 231, 0.3)",
-              },
-            },
-          },
-          series: [
-            {
-              name: "Skills",
-              type: "radar",
-              data: [
-                {
-                  value: [70, 95, 80, 90, 88, 82],
-                  name: "Technical Expertise",
-                  areaStyle: {
-                    color: "rgba(87, 181, 231, 0.1)",
-                  },
-                  lineStyle: {
-                    color: "rgba(87, 181, 231, 1)",
-                    width: 2,
-                  },
-                  itemStyle: {
-                    color: "rgba(87, 181, 231, 1)",
-                  },
-                },
-              ],
-            },
-          ],
-          tooltip: {
-            backgroundColor: document.documentElement.classList.contains("dark")
-              ? "rgba(31, 41, 55, 0.8)"
-              : "rgba(255, 255, 255, 0.8)",
-            borderColor: document.documentElement.classList.contains("dark")
-              ? "#374151"
-              : "#e0e7ff",
-            textStyle: {
-              color: document.documentElement.classList.contains("dark")
-                ? "#e5e7eb"
-                : "#1f2937",
-            },
-            formatter: function (params) {
-              return params.name + ": " + params.value;
-            },
-          },
-        };
-        skillsChart.setOption(skillsOption);
-        window.addEventListener("resize", function () {
-          skillsChart.resize();
-        });
-      });
-	  function showSuccessMessage() {
-        const successMessage = document.getElementById("successMessage");
-        successMessage.classList.remove("hidden");
-      }
-      function hideSuccessMessage() {
-        const successMessage = document.getElementById("successMessage");
-        successMessage.classList.add("hidden");
-      }
-	  
-	  
-    </script>
-	<script>
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const form = e.target;
-
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        document.getElementById('successMessage').classList.remove('hidden');
-        form.reset();
-      } else {
-        alert('Oops! Something went wrong.');
-      }
-    });
-  });
-
-  function hideSuccessMessage() {
-    document.getElementById('successMessage').classList.add('hidden');
-  }
-</script>
-
-  </body>
+</body>
 </html>
